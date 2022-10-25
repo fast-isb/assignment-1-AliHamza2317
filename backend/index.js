@@ -1,38 +1,46 @@
-/**
- * This is a basic starting point of the assignment
- * Modify the code according to your own needs and requirements
- */
+const express = require("express"); 
 
-//const express = require('express')
-import express from 'express'; // <-- Module Style import
-import bodyParser from 'body-parser';
+const cors = require("cors"); 
 
-// Importing user route
-import router from './routes/users.js';
-// const router = require('router')
-
-// const bodyParser = require('body-parser')
+const sellerMOdel = require("./sellerAtt"); 
 
 const app = express()
-const port = 3001
 
-app.use(bodyParser.json())
-// Adding a Router
-app.use('/users', router);
+const mongoose = require("mongoose"); 
 
-app.get('/', (req, res) => {
-    res.send('Hello Universe!')
+mongoose.connect("mongodb+srv://hamza:123@cluster0.btxgzbp.mongodb.net/assignment01?retryWrites=true&w=majority"); 
+
+app.use(cors())
+app.use(express.json()); 
+
+app.listen(3001, () => {
+
+    console.log("server runs perfectly"); 
 })
 
-app.get('/todos', (req, res) => {
-    res.send('A list of todo items will be returned')
+app.post("/AddSeller", async(req, res)=>{
+
+
+    try{
+        const seller = req.body;
+        const addNew = new sellerMOdel(seller);
+        await addNew.save(); 
+        res.json(seller);  
+    }catch(err){
+        console.log(err); 
+    }
 })
 
-app.post('/', (req, res) => {
-    console.log(req.body)
-    res.send('Posting a Request')
-})
+app.get("/GetSeller",(req, res)=>
+{
 
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
+    sellerMOdel.find({},(err,result)=>{
+
+        if(err){
+            res.json(err); 
+        }
+        else{
+            res.json(result); 
+        }
+    })
 })
