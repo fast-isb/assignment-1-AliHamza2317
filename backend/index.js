@@ -8,8 +8,8 @@ const app = express()
 
 const mongoose = require("mongoose"); 
 
-mongoose.connect("mongodb+srv://hamza:123@cluster0.btxgzbp.mongodb.net/assignment01?retryWrites=true&w=majority"); 
-
+// mongoose.connect("mongodb+srv://hamza:123@cluster0.btxgzbp.mongodb.net/assignment01?retryWrites=true&w=majority"); 
+mongoose.connect("mongodb+srv://mirzasheraz:mirza123@cluster0.tryltpz.mongodb.net/assignment-01?retryWrites=true&w=majority");
 app.use(cors())
 app.use(express.json()); 
 
@@ -43,4 +43,50 @@ app.get("/GetSeller",(req, res)=>
             res.json(result); 
         }
     })
+})
+
+app.put("/UpdateSeller",async(req,res)=>{
+    try{
+        const _id=req.params.id;
+        const result=await sellerMOdel.findByIdAndDelete(_id);
+        if(!result)
+        {
+            res.json({
+                status: "SUCCESS",
+                message: "Record Deleted..."
+            })
+        }
+        else{
+            res.json({
+                status: "Failed",
+                message: "Record Not Deleted..."
+            })
+        }
+    }
+    catch(e){
+        res.send(e)
+    }
+})
+
+app.delete("/DeleteSeller/:id",async(req,res)=>{
+    try{
+        const _id=req.params.id;
+        const result=await sellerMOdel.findByIdAndDelete(_id);
+        if(!result)
+        {
+            res.json({
+                status: "SUCCESS",
+                message: "Record Deleted..."
+            })
+        }
+        else{
+            res.json({
+                status: "Failed",
+                message: "Record Not Deleted..."
+            })
+        }
+    }
+    catch(e){
+        res.send(e)
+    }
 })

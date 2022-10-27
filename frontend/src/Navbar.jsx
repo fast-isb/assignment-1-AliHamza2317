@@ -23,10 +23,7 @@ const Navbar=()=>
           <NavLink className="nav-link" to="/add">AddSeller</NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link" to="/delete">DeleteSeller</NavLink>
-        </li>
-        <li className="nav-item">
-          <NavLink className="nav-link" to="/edit">EditSeller</NavLink>
+          <NavLink className="nav-link" to="/view">ViewSeller</NavLink>
         </li>
        </ul>
      
