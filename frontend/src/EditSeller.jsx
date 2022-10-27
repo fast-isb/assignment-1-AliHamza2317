@@ -39,18 +39,23 @@ const EditSeller=()=>{
     }
     const handleEdit=()=>
     {
-      axios.put(`http://localhost:3001/addseller/${id}`, {
-        shop_name,
-        shop_owner,
-        niche, 
-        address, 
-        phonenumber, 
-        password, 
-        
-      })
-     .then(
-        alert("add successfully!")
-        )
+      const url=`http://localhost:3001/UpdateSeller/${id}`
+      const Credentials = { shop_name, shop_owner, niche, address, phonenumber,password }
+      axios.put(url, Credentials)
+          .then(response => {
+              const result = response.data;
+              const { status, message } = result;
+              if (status !== 'SUCCESS') {
+                  alert(message, status)
+              }
+              else {
+                  alert(message)
+                  window.location.reload()
+              }
+          })
+          .catch(err => {
+              console.log(err)
+          })
     }
     
 

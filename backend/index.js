@@ -45,34 +45,37 @@ app.get("/GetSeller",(req, res)=>
     })
 })
 
-app.put("/UpdateSeller",async(req,res)=>{
-    try{
-        const _id=req.params.id;
-        const result=await sellerMOdel.findByIdAndDelete(_id);
-        if(!result)
-        {
+app.put("/UpdateSeller/:id",async(req,res)=>{
+    try {
+        const _id = req.params.id;
+        const result = await sellerMOdel.findByIdAndUpdate(_id,req.body,{new: true});
+        console.log(result)
+        if (!result) {
+            res.json({
+                status: "FAILED",
+                message: "Records not Update....",
+                data: result
+            })
+        }
+        else {
             res.json({
                 status: "SUCCESS",
-                message: "Record Deleted..."
-            })
-        }
-        else{
-            res.json({
-                status: "Failed",
-                message: "Record Not Deleted..."
+                message: "Record is Updated successfully...",
+                data: result
             })
         }
     }
-    catch(e){
+    catch (e) {
         res.send(e)
     }
+    
 })
 
 app.delete("/DeleteSeller/:id",async(req,res)=>{
     try{
         const _id=req.params.id;
         const result=await sellerMOdel.findByIdAndDelete(_id);
-        if(!result)
+        if(result)
         {
             res.json({
                 status: "SUCCESS",
