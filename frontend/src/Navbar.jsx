@@ -5,6 +5,19 @@ const Navbar=()=>
 {
     return(
         <>
+        {/* <nav className="main-nav">
+          <div className="logo">
+            <h2><span>F</span>ashion</h2>
+          </div>
+          <div className="menu-link">
+            <ul>
+              <li><NavLink className="nav-link" to="/add">AddSeller</NavLink></li>
+            <li>
+          <NavLink className="nav-link" to="/view">ViewSeller</NavLink>
+        </li>
+       </ul>
+          </div>
+        </nav> */}
         <div className="container-fluid nav-bg">
         
             <div className="row">
@@ -13,7 +26,7 @@ const Navbar=()=>
         
             <nav className="navbar navbar-expand-lg ">
   <div className="container-fluid">
-    <NavLink className="navbar-brand" to="/">Navbar</NavLink>
+    <NavLink className="navbar-brand" to="/"><h2><span>F</span>ashion</h2></NavLink>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
@@ -30,6 +43,10 @@ const Navbar=()=>
     </div>
   </div>
 </nav>
+{/* <section className="hero-section">
+        <p>Welcome to</p>
+        <h1>Fashion</h1>
+    </section> */}
   </div>
             </div>
         </div>

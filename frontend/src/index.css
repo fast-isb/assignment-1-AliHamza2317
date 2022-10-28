@@ -15,7 +15,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 text-align: center;
-
+margin-top: -2rem;
 }
 
 .center{
@@ -64,19 +64,7 @@ text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
   height: 3rem;
   width: 20%;
 }
-.navbar{
-  background-color: skyblue;
-}
 
-.navbar-brand {
-  color: white;
-}
-.nav-link{
-  color: white;
-}
-.nav-link2{
-  color: white;
-}
 .center button:hover{
   background-color: transparent;
     color: crimson;
@@ -85,4 +73,69 @@ text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 
 .viewtable{
   margin-top: 4rem;
+}
+
+.navbar{
+  width: 100%;
+  height: 6rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  /* padding: auto 10rem; */
+  display: grid;
+  grid-template-columns: 10rem 1fr 2fr 1fr 10rem;
+}
+
+.navbar-brand{
+  display: grid;
+  grid-column: 2/3;
+  /* background-color: antiquewhite; */
+  justify-content: start;
+  align-items: center;
+}
+.navbar-brand h2{
+  font-size: 2.5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  background: -webkit-linear-gradient(#eee, rgb(69, 57, 248));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.navbar-brand span{
+ font-size: 3.5rem;
+}
+
+.nav-item{
+  margin-left: 5rem;
+  font-size: 1.8rem;
+  
+}
+.navbar-nav {
+  height: 10rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  
+}
+
+.nav-item:hover{
+  transform-origin: left;
+  color: rgba(0, 0, 3, 1);
+  text-decoration: underline;
+  transition: 0.5s;
+}
+
+.homepage{
+  margin-top: 10rem;
+
+}
+.homepage p {
+  font-size: 3rem;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.homepage h1 {
+  font-size: 5rem;
+  text-transform: uppercase;
+  text-align: center;
 }
