@@ -9,6 +9,7 @@ const app = express()
 const mongoose = require("mongoose"); 
 
 // mongoose.connect("mongodb+srv://hamza:123@cluster0.btxgzbp.mongodb.net/assignment01?retryWrites=true&w=majority"); 
+// mongoose.connect("mongodb+srv://mirzasheraz:mirza123@cluster0.tryltpz.mongodb.net/assignment-01?retryWrites=true&w=majority");
 mongoose.connect("mongodb+srv://mirzasheraz:mirza123@cluster0.tryltpz.mongodb.net/assignment-01?retryWrites=true&w=majority");
 app.use(cors())
 app.use(express.json()); 

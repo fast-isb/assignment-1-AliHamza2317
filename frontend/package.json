@@ -1,7 +1,5 @@
 {
-  "name": "frontend",
-  "version": "0.1.0",
-  "private": true,
+  
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
     "@fortawesome/free-regular-svg-icons": "^6.2.0",
@@ -18,12 +16,14 @@
     "react-router": "^5.2.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "5.0.1",
+    "serve": "^14.1.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+   
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test  --transformIgnorePatterns node_modules/jest/bin/jest.js/",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -43,5 +43,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+   
+    "jest": "^27.5.1"
   }
 }

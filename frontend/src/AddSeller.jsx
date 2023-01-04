@@ -49,7 +49,7 @@ const AddSeller=()=>
           <br/>
           <input className="twoFields"  type="text" placeholder="Password" onChange={(event)=>{setpassword(event.target.value)}} ></input>
           <br/>
-          <button type="button" onClick={addSeller}> Add </button>
+          <button data-testid="btn"  type="button" onClick={addSeller}> Add </button>
           </div>
 
           

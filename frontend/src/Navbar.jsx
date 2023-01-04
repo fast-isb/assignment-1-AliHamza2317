@@ -5,20 +5,7 @@ const Navbar=()=>
 {
     return(
         <>
-        {/* <nav className="main-nav">
-          <div className="logo">
-            <h2><span>F</span>ashion</h2>
-          </div>
-          <div className="menu-link">
-            <ul>
-              <li><NavLink className="nav-link" to="/add">AddSeller</NavLink></li>
-            <li>
-          <NavLink className="nav-link" to="/view">ViewSeller</NavLink>
-        </li>
-       </ul>
-          </div>
-        </nav> */}
-        <div className="container-fluid nav-bg">
+        <div data-testid="comp" className="container-fluid nav-bg">
         
             <div className="row">
                 <div className="col-10 mx-auto">
@@ -38,15 +25,15 @@ const Navbar=()=>
         <li className="nav-item">
           <NavLink className="nav-link" to="/view">ViewSeller</NavLink>
         </li>
+        <li className="nav-item">
+          <NavLink className="nav-link" to="/ali">Ali</NavLink>
+        </li>
        </ul>
      
     </div>
   </div>
 </nav>
-{/* <section className="hero-section">
-        <p>Welcome to</p>
-        <h1>Fashion</h1>
-    </section> */}
+
   </div>
             </div>
         </div>
